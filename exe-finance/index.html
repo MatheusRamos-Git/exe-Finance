@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exe Finance — Simplifique sua vida financeira</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdab/WOVqFSVELLMCMa+K47JcWcFiIqqdqzlrCjh52xbHNF1qb/drgMvDqGDXh+yMU4A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS próprio -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header>
+    <nav class="navbar">
+
+      <!-- Logo -->
+      <div class="navbar__logo">
+        <div class="navbar__logo-icon">✦</div>
+        Exe Finance
+      </div>
+
+      <!-- Menu principal -->
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="#features">Funcionalidades</a></li>
+        <li><a href="#stats">Números</a></li>
+        <li><a href="#cta">Conexão Bancária</a></li>
+        <li><a href="#">Quem Somos</a></li>
+      </ul>
+
+      <!-- Botões -->
+      <div class="navbar__actions">
+        <button class="btn btn--outline">Login</button>
+        <button class="btn btn--primary">Cadastrar-se</button>
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </nav>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero__content">
+
+      <!-- Texto -->
+      <div class="hero__text">
+        <span class="hero__eyebrow">Gestão Financeira Inteligente</span>
+        <h1 class="hero__title">
+          Simplifique sua<br>
+          <span>vida financeira!</span>
+        </h1>
+        <p class="hero__subtitle">
+          Gerencie suas finanças de forma fácil e eficiente. Conecte seus bancos,
+          acompanhe entradas e saídas em tempo real, tudo em um só lugar.
+        </p>
+        <button class="btn btn--dark">
+          Comece Agora &nbsp; <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <div class="hero__banks">
+          <p>Compatível com:</p>
+          <span class="bank-badge bank-badge--itau">Itaú</span>
+          <span class="bank-badge bank-badge--bradesco">Bradesco</span>
+          <span class="bank-badge bank-badge--nubank">Nubank</span>
+        </div>
+      </div>
+
+      <!-- Card mockup -->
+      <div class="hero__visual">
+        <div class="card-mockup">
+
+          <div class="card-mockup__header">
+            <span class="card-mockup__label">Saldo Total</span>
+            <span class="card-mockup__dot"></span>
+          </div>
+
+          <div class="card-mockup__balance">R$ 5.280,00</div>
+          <div class="card-mockup__balance-label">Atualizado agora</div>
+
+          <div class="card-mockup__divider"></div>
+
+          <!-- Transações -->
+          <div class="card-mockup__row">
+            <div class="card-mockup__row-left">
+              <div class="card-mockup__icon card-mockup__icon--in">
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div>
+                <div class="card-mockup__row-name">Salário</div>
+                <div class="card-mockup__row-date">18 Jun 2026</div>
+              </div>
+            </div>
+            <span class="card-mockup__amount--in">+ R$ 3.200,00</span>
+          </div>
+
+          <div class="card-mockup__row">
+            <div class="card-mockup__row-left">
+              <div class="card-mockup__icon card-mockup__icon--out">
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <div>
+                <div class="card-mockup__row-name">Mercado</div>
+                <div class="card-mockup__row-date">17 Jun 2026</div>
+              </div>
+            </div>
+            <span class="card-mockup__amount--out">- R$ 480,00</span>
+          </div>
+
+          <div class="card-mockup__row">
+            <div class="card-mockup__row-left">
+              <div class="card-mockup__icon card-mockup__icon--out">
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <div>
+                <div class="card-mockup__row-name">Aluguel</div>
+                <div class="card-mockup__row-date">15 Jun 2026</div>
+              </div>
+            </div>
+            <span class="card-mockup__amount--out">- R$ 1.500,00</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES ==================== -->
+  <section class="features" id="features">
+
+    <p class="section-label">Por que usar o Exe Finance?</p>
+    <h2 class="section-title">Tudo que você precisa para cuidar do seu dinheiro</h2>
+    <p class="section-sub">Ferramentas simples e poderosas para você ter controle total das suas finanças.</p>
+
+    <div class="features__grid">
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <i class="fa-solid fa-link" style="color: #2d8a45;"></i>
+        </div>
+        <h3 class="feature-card__title">Conexão Bancária</h3>
+        <p class="feature-card__desc">
+          Conecte seus bancos de forma segura e visualize todas as suas contas
+          em um único painel, sem precisar acessar app por app.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <i class="fa-solid fa-chart-pie" style="color: #2d8a45;"></i>
+        </div>
+        <h3 class="feature-card__title">Controle de Gastos</h3>
+        <p class="feature-card__desc">
+          Categorize suas despesas automaticamente e veja exatamente
+          para onde seu dinheiro está indo todos os meses.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <i class="fa-solid fa-bell" style="color: #2d8a45;"></i>
+        </div>
+        <h3 class="feature-card__title">Alertas Inteligentes</h3>
+        <p class="feature-card__desc">
+          Receba notificações sobre cobranças, gastos acima do normal
+          e oportunidades de economia personalizadas para você.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <i class="fa-solid fa-bullseye" style="color: #2d8a45;"></i>
+        </div>
+        <h3 class="feature-card__title">Metas Financeiras</h3>
+        <p class="feature-card__desc">
+          Defina objetivos, acompanhe seu progresso e receba dicas para
+          alcançar sua independência financeira mais rápido.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <i class="fa-solid fa-shield-halved" style="color: #2d8a45;"></i>
+        </div>
+        <h3 class="feature-card__title">Segurança Total</h3>
+        <p class="feature-card__desc">
+          Seus dados são protegidos com criptografia de ponta a ponta
+          e autenticação em dois fatores, seguindo as normas do Banco Central.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <i class="fa-solid fa-mobile-screen" style="color: #2d8a45;"></i>
+        </div>
+        <h3 class="feature-card__title">Acesso em Qualquer Lugar</h3>
+        <p class="feature-card__desc">
+          Acesse suas finanças pelo celular, tablet ou computador. A
+          interface se adapta perfeitamente a qualquer dispositivo.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== STATS ==================== -->
+  <section class="stats" id="stats">
+    <div class="stats__inner">
+
+      <div>
+        <div class="stats__number">+50 mil</div>
+        <div class="stats__desc">usuários ativos no Brasil</div>
+      </div>
+
+      <div>
+        <div class="stats__number">R$ 2 bi</div>
+        <div class="stats__desc">em transações monitoradas</div>
+      </div>
+
+      <div>
+        <div class="stats__number">15+</div>
+        <div class="stats__desc">bancos conectados</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta" id="cta">
+    <h2 class="cta__title">Pronto para organizar suas finanças?</h2>
+    <p class="cta__sub">Crie sua conta grátis em menos de 2 minutos e comece hoje mesmo.</p>
+    <button class="btn btn--dark">
+      Criar conta gratuita &nbsp; <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <p>© 2026 <span>Exe Finance</span>. Todos os direitos reservados. Projeto acadêmico — Faculdade de Tecnologia.</p>
+  </footer>
+
+  <!-- Script hamburger menu (sem JS externo, só interação básica) -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
