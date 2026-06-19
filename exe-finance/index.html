@@ -5,134 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exe Finance — Simplifique sua vida financeira</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome (ícones) -->
+  <!-- Configuração de cores customizadas do Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'green-dark':  '#1a5c2a',
+            'green-mid':   '#2d8a45',
+            'green-light': '#4db86a',
+            'green-pale':  '#c8f0d0',
+            'green-hero':  '#b8e86e',
+            'text-dark':   '#0f2d17',
+            'text-muted':  '#4a7a56',
+            'red-out':     '#e53935',
+          },
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-Avb2QiuDEEvB4bZJYdab/WOVqFSVELLMCMa+K47JcWcFiIqqdqzlrCjh52xbHNF1qb/drgMvDqGDXh+yMU4A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- CSS próprio -->
+  <!-- CSS próprio (complemento) -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="font-outfit text-text-dark">
 
   <!-- ==================== NAVBAR ==================== -->
   <header>
-    <nav class="navbar">
+    <nav class="bg-green-dark flex items-center justify-between px-[5%] h-[70px] sticky top-0 z-50">
 
       <!-- Logo -->
-      <div class="navbar__logo">
-        <div class="navbar__logo-icon">✦</div>
+      <div class="flex items-center gap-3 text-white font-bold text-xl">
+        <div class="w-9 h-9 border-2 border-green-hero rounded-full flex items-center justify-center text-green-hero font-black text-sm">
+          ✦
+        </div>
         Exe Finance
       </div>
 
-      <!-- Menu principal -->
-      <ul class="navbar__menu" id="navMenu">
-        <li><a href="#features">Funcionalidades</a></li>
-        <li><a href="#stats">Números</a></li>
-        <li><a href="#cta">Conexão Bancária</a></li>
-        <li><a href="#">Quem Somos</a></li>
+      <!-- Menu desktop -->
+      <ul class="hidden md:flex items-center gap-8 list-none">
+        <li><a href="#features" class="text-white/80 text-sm font-medium hover:text-green-hero transition-colors">Funcionalidades</a></li>
+        <li><a href="#stats"    class="text-white/80 text-sm font-medium hover:text-green-hero transition-colors">Números</a></li>
+        <li><a href="#cta"      class="text-white/80 text-sm font-medium hover:text-green-hero transition-colors">Conexão Bancária</a></li>
+        <li><a href="#"         class="text-white/80 text-sm font-medium hover:text-green-hero transition-colors">Quem Somos</a></li>
       </ul>
 
-      <!-- Botões -->
-      <div class="navbar__actions">
-        <button class="btn btn--outline">Login</button>
-        <button class="btn btn--primary">Cadastrar-se</button>
+      <!-- Botões desktop -->
+      <div class="hidden md:flex gap-3 items-center">
+        <button class="px-5 py-2 rounded-lg border-2 border-white text-white text-sm font-semibold hover:bg-white/10 transition-colors">
+          Login
+        </button>
+        <button class="px-5 py-2 rounded-lg bg-green-hero text-green-dark text-sm font-semibold hover:bg-[#a8d85e] transition-colors">
+          Cadastrar-se
+        </button>
       </div>
 
-      <!-- Hamburger (mobile) -->
-      <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <!-- Hamburger mobile -->
+      <button id="hamburger" class="md:hidden flex flex-col gap-[5px] cursor-pointer bg-transparent border-none p-1">
+        <span class="w-6 h-[2px] bg-white rounded block"></span>
+        <span class="w-6 h-[2px] bg-white rounded block"></span>
+        <span class="w-6 h-[2px] bg-white rounded block"></span>
       </button>
 
     </nav>
+
+    <!-- Menu mobile -->
+    <ul id="nav-menu" class="bg-green-dark list-none">
+      <li><a href="#features" class="text-white/80 text-sm font-medium hover:text-green-hero block py-1">Funcionalidades</a></li>
+      <li><a href="#stats"    class="text-white/80 text-sm font-medium hover:text-green-hero block py-1">Números</a></li>
+      <li><a href="#cta"      class="text-white/80 text-sm font-medium hover:text-green-hero block py-1">Conexão Bancária</a></li>
+      <li><a href="#"         class="text-white/80 text-sm font-medium hover:text-green-hero block py-1">Quem Somos</a></li>
+    </ul>
   </header>
 
   <!-- ==================== HERO ==================== -->
-  <section class="hero">
-    <div class="hero__content">
+  <section class="hero-gradient min-h-[calc(100vh-70px)] flex items-center px-[5%] py-16 relative overflow-hidden">
+
+    <!-- Círculo decorativo -->
+    <div class="absolute bottom-[-80px] right-[-60px] w-[520px] h-[520px] bg-green-hero/20 rounded-full"></div>
+
+    <div class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
 
       <!-- Texto -->
-      <div class="hero__text">
-        <span class="hero__eyebrow">Gestão Financeira Inteligente</span>
-        <h1 class="hero__title">
+      <div>
+        <span class="inline-block bg-green-hero/20 text-green-hero text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-5 border border-green-hero/40">
+          Gestão Financeira Inteligente
+        </span>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
           Simplifique sua<br>
-          <span>vida financeira!</span>
+          <span class="text-green-hero">vida financeira!</span>
         </h1>
-        <p class="hero__subtitle">
+
+        <p class="text-white/80 text-base mb-9 max-w-md">
           Gerencie suas finanças de forma fácil e eficiente. Conecte seus bancos,
           acompanhe entradas e saídas em tempo real, tudo em um só lugar.
         </p>
-        <button class="btn btn--dark">
+
+        <button class="bg-text-dark text-white px-8 py-4 rounded-xl font-semibold text-base hover:bg-[#1e3a24] transition-colors">
           Comece Agora &nbsp; <i class="fa-solid fa-arrow-right"></i>
         </button>
 
-        <div class="hero__banks">
-          <p>Compatível com:</p>
-          <span class="bank-badge bank-badge--itau">Itaú</span>
-          <span class="bank-badge bank-badge--bradesco">Bradesco</span>
-          <span class="bank-badge bank-badge--nubank">Nubank</span>
+        <!-- Bancos compatíveis -->
+        <div class="flex flex-wrap items-center gap-3 mt-8">
+          <p class="text-white/60 text-xs font-medium">Compatível com:</p>
+          <span class="bg-white rounded-lg px-3 py-1 text-xs font-bold text-[#003d7c]">Itaú</span>
+          <span class="bg-white rounded-lg px-3 py-1 text-xs font-bold text-[#cc2229]">Bradesco</span>
+          <span class="bg-white rounded-lg px-3 py-1 text-xs font-bold text-[#820ad1]">Nubank</span>
         </div>
       </div>
 
-      <!-- Card mockup -->
-      <div class="hero__visual">
-        <div class="card-mockup">
+      <!-- Card Mockup -->
+      <div class="flex justify-center items-center order-first md:order-last">
+        <div class="glass-card shadow-green rounded-3xl p-7 w-full max-w-[340px]">
 
-          <div class="card-mockup__header">
-            <span class="card-mockup__label">Saldo Total</span>
-            <span class="card-mockup__dot"></span>
+          <!-- Header do card -->
+          <div class="flex justify-between items-center mb-6">
+            <span class="text-white/60 text-xs uppercase tracking-widest">Saldo Total</span>
+            <span class="w-2 h-2 bg-green-hero rounded-full dot-glow"></span>
           </div>
 
-          <div class="card-mockup__balance">R$ 5.280,00</div>
-          <div class="card-mockup__balance-label">Atualizado agora</div>
+          <!-- Saldo -->
+          <div class="text-white text-4xl font-extrabold mb-1">R$ 5.280,00</div>
+          <div class="text-white/50 text-xs mb-7">Atualizado agora</div>
 
-          <div class="card-mockup__divider"></div>
+          <!-- Divisor -->
+          <div class="h-px bg-white/10 mb-5"></div>
 
-          <!-- Transações -->
-          <div class="card-mockup__row">
-            <div class="card-mockup__row-left">
-              <div class="card-mockup__icon card-mockup__icon--in">
+          <!-- Transação: entrada -->
+          <div class="flex justify-between items-center py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-green-light/25 flex items-center justify-center text-green-light text-sm">
                 <i class="fa-solid fa-arrow-down"></i>
               </div>
               <div>
-                <div class="card-mockup__row-name">Salário</div>
-                <div class="card-mockup__row-date">18 Jun 2026</div>
+                <div class="text-white/85 text-sm font-medium">Salário</div>
+                <div class="text-white/40 text-xs">18 Jun 2026</div>
               </div>
             </div>
-            <span class="card-mockup__amount--in">+ R$ 3.200,00</span>
+            <span class="text-green-light font-bold text-sm">+ R$ 3.200,00</span>
           </div>
 
-          <div class="card-mockup__row">
-            <div class="card-mockup__row-left">
-              <div class="card-mockup__icon card-mockup__icon--out">
+          <!-- Divisor interno -->
+          <div class="h-px bg-white/8"></div>
+
+          <!-- Transação: saída mercado -->
+          <div class="flex justify-between items-center py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-red-out/20 flex items-center justify-center text-red-out text-sm">
                 <i class="fa-solid fa-arrow-up"></i>
               </div>
               <div>
-                <div class="card-mockup__row-name">Mercado</div>
-                <div class="card-mockup__row-date">17 Jun 2026</div>
+                <div class="text-white/85 text-sm font-medium">Mercado</div>
+                <div class="text-white/40 text-xs">17 Jun 2026</div>
               </div>
             </div>
-            <span class="card-mockup__amount--out">- R$ 480,00</span>
+            <span class="text-red-out font-bold text-sm">- R$ 480,00</span>
           </div>
 
-          <div class="card-mockup__row">
-            <div class="card-mockup__row-left">
-              <div class="card-mockup__icon card-mockup__icon--out">
+          <!-- Divisor interno -->
+          <div class="h-px bg-white/8"></div>
+
+          <!-- Transação: saída aluguel -->
+          <div class="flex justify-between items-center py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-red-out/20 flex items-center justify-center text-red-out text-sm">
                 <i class="fa-solid fa-arrow-up"></i>
               </div>
               <div>
-                <div class="card-mockup__row-name">Aluguel</div>
-                <div class="card-mockup__row-date">15 Jun 2026</div>
+                <div class="text-white/85 text-sm font-medium">Aluguel</div>
+                <div class="text-white/40 text-xs">15 Jun 2026</div>
               </div>
             </div>
-            <span class="card-mockup__amount--out">- R$ 1.500,00</span>
+            <span class="text-red-out font-bold text-sm">- R$ 1.500,00</span>
           </div>
 
         </div>
@@ -142,75 +197,87 @@
   </section>
 
   <!-- ==================== FEATURES ==================== -->
-  <section class="features" id="features">
+  <section class="py-24 px-[5%] bg-white" id="features">
 
-    <p class="section-label">Por que usar o Exe Finance?</p>
-    <h2 class="section-title">Tudo que você precisa para cuidar do seu dinheiro</h2>
-    <p class="section-sub">Ferramentas simples e poderosas para você ter controle total das suas finanças.</p>
+    <p class="text-center text-green-mid text-xs font-bold tracking-widest uppercase mb-4">
+      Por que usar o Exe Finance?
+    </p>
+    <h2 class="text-center text-3xl md:text-4xl font-extrabold text-text-dark mb-3">
+      Tudo que você precisa para cuidar do seu dinheiro
+    </h2>
+    <p class="text-center text-text-muted text-base max-w-md mx-auto mb-14">
+      Ferramentas simples e poderosas para você ter controle total das suas finanças.
+    </p>
 
-    <div class="features__grid">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
 
-      <div class="feature-card">
-        <div class="feature-card__icon">
-          <i class="fa-solid fa-link" style="color: #2d8a45;"></i>
+      <!-- Card 1 -->
+      <div class="feature-card border border-green-pale rounded-2xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-green-pale flex items-center justify-center text-xl mb-5">
+          <i class="fa-solid fa-link text-green-mid"></i>
         </div>
-        <h3 class="feature-card__title">Conexão Bancária</h3>
-        <p class="feature-card__desc">
+        <h3 class="text-base font-bold text-text-dark mb-2">Conexão Bancária</h3>
+        <p class="text-sm text-text-muted leading-relaxed">
           Conecte seus bancos de forma segura e visualize todas as suas contas
           em um único painel, sem precisar acessar app por app.
         </p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">
-          <i class="fa-solid fa-chart-pie" style="color: #2d8a45;"></i>
+      <!-- Card 2 -->
+      <div class="feature-card border border-green-pale rounded-2xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-green-pale flex items-center justify-center text-xl mb-5">
+          <i class="fa-solid fa-chart-pie text-green-mid"></i>
         </div>
-        <h3 class="feature-card__title">Controle de Gastos</h3>
-        <p class="feature-card__desc">
+        <h3 class="text-base font-bold text-text-dark mb-2">Controle de Gastos</h3>
+        <p class="text-sm text-text-muted leading-relaxed">
           Categorize suas despesas automaticamente e veja exatamente
           para onde seu dinheiro está indo todos os meses.
         </p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">
-          <i class="fa-solid fa-bell" style="color: #2d8a45;"></i>
+      <!-- Card 3 -->
+      <div class="feature-card border border-green-pale rounded-2xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-green-pale flex items-center justify-center text-xl mb-5">
+          <i class="fa-solid fa-bell text-green-mid"></i>
         </div>
-        <h3 class="feature-card__title">Alertas Inteligentes</h3>
-        <p class="feature-card__desc">
+        <h3 class="text-base font-bold text-text-dark mb-2">Alertas Inteligentes</h3>
+        <p class="text-sm text-text-muted leading-relaxed">
           Receba notificações sobre cobranças, gastos acima do normal
           e oportunidades de economia personalizadas para você.
         </p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">
-          <i class="fa-solid fa-bullseye" style="color: #2d8a45;"></i>
+      <!-- Card 4 -->
+      <div class="feature-card border border-green-pale rounded-2xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-green-pale flex items-center justify-center text-xl mb-5">
+          <i class="fa-solid fa-bullseye text-green-mid"></i>
         </div>
-        <h3 class="feature-card__title">Metas Financeiras</h3>
-        <p class="feature-card__desc">
+        <h3 class="text-base font-bold text-text-dark mb-2">Metas Financeiras</h3>
+        <p class="text-sm text-text-muted leading-relaxed">
           Defina objetivos, acompanhe seu progresso e receba dicas para
           alcançar sua independência financeira mais rápido.
         </p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">
-          <i class="fa-solid fa-shield-halved" style="color: #2d8a45;"></i>
+      <!-- Card 5 -->
+      <div class="feature-card border border-green-pale rounded-2xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-green-pale flex items-center justify-center text-xl mb-5">
+          <i class="fa-solid fa-shield-halved text-green-mid"></i>
         </div>
-        <h3 class="feature-card__title">Segurança Total</h3>
-        <p class="feature-card__desc">
+        <h3 class="text-base font-bold text-text-dark mb-2">Segurança Total</h3>
+        <p class="text-sm text-text-muted leading-relaxed">
           Seus dados são protegidos com criptografia de ponta a ponta
           e autenticação em dois fatores, seguindo as normas do Banco Central.
         </p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card__icon">
-          <i class="fa-solid fa-mobile-screen" style="color: #2d8a45;"></i>
+      <!-- Card 6 -->
+      <div class="feature-card border border-green-pale rounded-2xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-green-pale flex items-center justify-center text-xl mb-5">
+          <i class="fa-solid fa-mobile-screen text-green-mid"></i>
         </div>
-        <h3 class="feature-card__title">Acesso em Qualquer Lugar</h3>
-        <p class="feature-card__desc">
+        <h3 class="text-base font-bold text-text-dark mb-2">Acesso em Qualquer Lugar</h3>
+        <p class="text-sm text-text-muted leading-relaxed">
           Acesse suas finanças pelo celular, tablet ou computador. A
           interface se adapta perfeitamente a qualquer dispositivo.
         </p>
@@ -220,47 +287,49 @@
   </section>
 
   <!-- ==================== STATS ==================== -->
-  <section class="stats" id="stats">
-    <div class="stats__inner">
+  <section class="bg-green-dark py-20 px-[5%]" id="stats">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
 
       <div>
-        <div class="stats__number">+50 mil</div>
-        <div class="stats__desc">usuários ativos no Brasil</div>
+        <div class="text-green-hero text-5xl font-extrabold leading-none mb-2">+50 mil</div>
+        <div class="text-white/65 text-sm">usuários ativos no Brasil</div>
       </div>
 
       <div>
-        <div class="stats__number">R$ 2 bi</div>
-        <div class="stats__desc">em transações monitoradas</div>
+        <div class="text-green-hero text-5xl font-extrabold leading-none mb-2">R$ 2 bi</div>
+        <div class="text-white/65 text-sm">em transações monitoradas</div>
       </div>
 
       <div>
-        <div class="stats__number">15+</div>
-        <div class="stats__desc">bancos conectados</div>
+        <div class="text-green-hero text-5xl font-extrabold leading-none mb-2">15+</div>
+        <div class="text-white/65 text-sm">bancos conectados</div>
       </div>
 
     </div>
   </section>
 
   <!-- ==================== CTA ==================== -->
-  <section class="cta" id="cta">
-    <h2 class="cta__title">Pronto para organizar suas finanças?</h2>
-    <p class="cta__sub">Crie sua conta grátis em menos de 2 minutos e comece hoje mesmo.</p>
-    <button class="btn btn--dark">
+  <section class="cta-gradient py-24 px-[5%] text-center" id="cta">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-text-dark mb-4">
+      Pronto para organizar suas finanças?
+    </h2>
+    <p class="text-text-muted text-base mb-9">
+      Crie sua conta grátis em menos de 2 minutos e comece hoje mesmo.
+    </p>
+    <button class="bg-text-dark text-white px-8 py-4 rounded-xl font-semibold text-base hover:bg-[#1e3a24] transition-colors">
       Criar conta gratuita &nbsp; <i class="fa-solid fa-arrow-right"></i>
     </button>
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="footer">
-    <p>© 2026 <span>Exe Finance</span>. Todos os direitos reservados. Projeto acadêmico — Faculdade de Tecnologia.</p>
+  <footer class="bg-text-dark text-white/50 text-center py-7 px-[5%] text-xs">
+    <p>© 2026 <span class="text-green-hero">Exe Finance</span>. Todos os direitos reservados. Projeto acadêmico — Faculdade de Tecnologia.</p>
   </footer>
 
-  <!-- Script hamburger menu (sem JS externo, só interação básica) -->
+  <!-- Menu mobile toggle (JS mínimo) -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu   = document.getElementById('navMenu');
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.toggle('open');
     });
   </script>
 
